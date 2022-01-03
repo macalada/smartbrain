@@ -32,6 +32,6 @@ app.post('/imageurl', (req, res)=> image.handleApiCall(req, res))
 app.post('/signin',(req, res)=> signIn.handleSignIn(req, res, db, bcrypt) )
 app.post('/register', (req, res)=> register.handleRegister(req, res, db, bcrypt))
 
-app.listen(4000, ()=>{
-    console.log('listening to port 4000')
+app.listen(process.env.PORT||4000, ()=>{
+    console.log(`listening to port ${process.env.PORT}`)
 })
